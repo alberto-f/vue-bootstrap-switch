@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.css">
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/js/bootstrap-switch.js"></script>
+
+	<!-- Vuejs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
+	<script type="text/javascript" src="./vue-bootstrap-switch.js"></script>
+</head>
+<body>
+	<!-- Vue Component -->
+	<div id="app">
+		<vue-bootstrap-switch
+			v-model="opts.state"
+			:options="opts"></vue-bootstrap-switch>
+	</div>
+
+	<script type="text/javascript">
+		// create a root instance
+		const data = {
+			opts: {
+				state: true,
+				size: null,
+				animate: true,
+				disabled: false,
+				readonly: false,
+				indeterminate: false,
+				inverse: false,
+				radioAllOff: false,
+				onColor: 'success',
+				offColor: 'danger',
+				onText: 'ON',
+				offText: 'OFF',
+				labelText: '&nbsp;',
+				handleWidth: 'auto',
+				labelWidth: 'auto',
+				baseClass: 'bootstrap-switch',
+				wrapperClass: 'wrapper',
+				onInit: function(){
+					console.log('init')
+				},
+				onSwitchChange: function(){
+					console.log('switch')
+				}
+			}
+		}
+		Vue.use(VueBootstrapSwitch)
+		var app = new Vue({
+		  el: '#app',
+		  data: data
+		})
+
+	</script>
+</body>
+</html>
